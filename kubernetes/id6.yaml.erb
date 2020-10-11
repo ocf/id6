@@ -64,7 +64,7 @@ spec:
             - --enable-session-cookies
             - --listen=:8000
             - --upstream-url=http://localhost:8080
-            - --resources=uri=/*|roles=ocfstaff
+            - --resources=uri=/*|roles=ocf
             - --headers=Host=id6.ocf.berkeley.edu
           env:
             - name: KEYCLOAK_SECRET
