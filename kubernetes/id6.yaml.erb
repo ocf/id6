@@ -45,6 +45,13 @@ spec:
               cpu: 1
           ports:
             - containerPort: 8080
+          env:
+            - name: DISCORD_TOKEN
+              value: <%= discord_token %>
+            - name: CONFIG_FILE_PATH
+              value: "/config/config.toml"
+            - name: POSTGRES_CONN
+              value: <%= postgres_string %>
         - name: auth
           image: "keycloak/keycloak-gatekeeper:6.0.1"
           args:
