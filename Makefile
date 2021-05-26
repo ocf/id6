@@ -1,4 +1,4 @@
-ID6_DOCKER_TAG = docker-push.ocf.berkeley.edu/synapse:latest
+ID6_DOCKER_TAG = docker-push.ocf.berkeley.edu/id6:latest
 
 .PHONY: cook-image
 cook-image:
