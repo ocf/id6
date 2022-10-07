@@ -53,7 +53,7 @@ spec:
             - name: POSTGRES_CONN
               value: <%= postgres_string %>
         - name: auth
-          image: "keycloak/keycloak-gatekeeper:6.0.1"
+          image: "quay.io/keycloak/keycloak-gatekeeper:6.0.1"
           args:
             - --client-id=id6
             - --client-secret=$(KEYCLOAK_SECRET)
