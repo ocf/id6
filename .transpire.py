@@ -163,7 +163,7 @@ def objects():
 
     svc_proxy = Service(
         name="id6-proxy",
-        selector=dep_worker.get_selector(),
+        selector=dep_proxy.get_selector(),
         port_on_pod=8000,
         port_on_svc=80,
     )
