@@ -45,7 +45,6 @@ def objects():
         name="id6",
         string_data={
             "discord-token": "",
-            "postgres": "",
             "keycloak": "",
             "encryption_key": "",
         },
