@@ -169,7 +169,7 @@ def objects():
     )
 
     ing_proxy = Ingress.from_svc(
-        svc=svc_worker,
+        svc=svc_proxy,
         host="discord.ocf.berkeley.edu",
         path_prefix="/",
     )
