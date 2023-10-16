@@ -45,7 +45,6 @@ def objects():
         name="id6",
         string_data={
             "discord-token": "",
-            "config_path": "",
             "postgres": "",
             "keycloak": "",
             "encryption_key": "",
@@ -103,12 +102,7 @@ def objects():
         },
         {
             "name": "CONFIG_FILE_PATH",
-            "valueFrom": {
-                "secretKeyRef": {
-                    "name": "id6",
-                    "key": "config_path",
-                }
-            },
+            "value": "/config/config.toml",
         },
         {
             "name": "POSTGRES_CONN",
