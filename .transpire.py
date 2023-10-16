@@ -106,7 +106,7 @@ def objects():
         },
         {
             "name": "POSTGRES_CONN",
-            "value": "postgres://$(_DB_USER):$(_DB_PASS)@ocf-notes:5432/notes?ssl=no-verify",
+            "value": "postgres://$(_DB_USER):$(_DB_PASS)@ocf-id6:5432/id6",
         },
     ]
     dep_proxy = Deployment(
