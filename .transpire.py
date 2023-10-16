@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from transpire.resources import Deployment, Ingress, Service, ConfigMap
+from transpire.resources import Deployment, Ingress, Service, ConfigMap, Secret
 from transpire.types import Image
 from transpire.utils import get_image_tag
 
