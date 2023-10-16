@@ -23,6 +23,7 @@ role_id = 737454417904664687
 msg_id = 764650095161376798
 """
 
+
 def objects():
     yield {
         "apiVersion": "acid.zalan.do/v1",
@@ -105,15 +106,15 @@ def objects():
         },
         {
             "name": "POSTGRES_CONN",
-            "value": "postgres://$(_DB_USER):$(_DB_PASS)@ocf-notes:5432/notes?ssl=no-verify"
+            "value": "postgres://$(_DB_USER):$(_DB_PASS)@ocf-notes:5432/notes?ssl=no-verify",
         },
-     ]
+    ]
     dep_proxy = Deployment(
         name="id6-proxy",
         image="quay.io/keycloak/keycloak-gatekeeper:6.0.1",
         ports=[8000],
         args=[
-            "--client-id=id6", 
+            "--client-id=id6",
             "--client-secret=$(KEYCLOAK_SECRET)",
             "--encryption-key=$(ENCRYPTION_KEY)",
             "--redirection-url=https://discord.ocf.berkeley.edu/",
@@ -123,9 +124,10 @@ def objects():
             "--listen=:8000",
             "--upstream-url=http://id6",
             "--resources=uri=/*",
-            "--headers=Host=discord.ocf.berkeley.edu",]
+            "--headers=Host=discord.ocf.berkeley.edu",
+        ],
     )
-    
+
     dep_proxy.obj.spec.template.spec.containers[0].env = [
         {
             "name": "KEYCLOAK_SECRET",
@@ -145,7 +147,7 @@ def objects():
                 }
             },
         },
-     ]
+    ]
 
     svc = Service(
         name="id6",
