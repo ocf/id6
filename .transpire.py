@@ -178,4 +178,4 @@ def objects():
 
 
 def images():
-    yield Image(name="id6", path=Path("/"))
+    yield Image(name="id6", path=Path("/"), registry="ghcr")
