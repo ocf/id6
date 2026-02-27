@@ -35,7 +35,7 @@ async fn get_croads_menu(meal: &str) -> Result<String, Box<dyn std::error::Error
             for category in period.select(&category_selector) {
                 let category_name = category.select(&span_selector).next().map(|s| s.inner_html()).unwrap_or_default().to_lowercase();
                 
-                if category_name.contains("center plate") || category_name.contains("lemongrass") || category_name.contains("grill") {
+                if category_name.contains("center plate") || category_name.contains("lemon grass") || category_name.contains("grill") {
                     for recipe in category.select(&recipe_selector) {
                         let text = recipe.inner_html();
                         let text = text.replace("&amp;", "&");
