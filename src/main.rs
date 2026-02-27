@@ -18,6 +18,14 @@ mod routes;
 mod db;
 mod templates;
 mod bot;
+pub mod commands;
+
+use serenity::framework::standard::macros::group;
+use commands::*;
+
+#[group]
+#[commands(croads)]
+struct General;
 
 #[derive(Deserialize, Clone)]
 struct Config {
@@ -51,7 +59,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
             is_loop_running: AtomicBool::new(false),
             config
         })
-        .framework(serenity::framework::standard::StandardFramework::new())
+        .framework(serenity::framework::standard::StandardFramework::new()
+            .configure(|c| c.prefix("?"))
+            .group(&GENERAL_GROUP))
         .await
         .expect("Unable to create Discord client.");
 
