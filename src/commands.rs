@@ -46,7 +46,7 @@ async fn get_croads_menu(meal: &str) -> Result<String, Box<dyn std::error::Error
                 }
             }
 
-            if period_name.contains("Lunch") {
+            if period_name.contains("unch") {
                 lunch_items = items;
             } else if period_name.contains("Dinner") {
                 dinner_items = items;
